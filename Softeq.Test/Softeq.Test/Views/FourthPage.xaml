@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Softeq.Test.Views.FourthPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="FilePickButton" 
+                    Text="Pick file"/>
+            <Entry IsReadOnly="True" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"
+                   Placeholder="filename"
+                   Text="{Binding FileName}"
+                   PlaceholderColor="DarkSlateGray"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry IsReadOnly="True" 
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       Placeholder="N"
+                       Text="{Binding N}"
+                       PlaceholderColor="DarkSlateGray"/>
+                <Entry IsReadOnly="True" 
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       Text="{Binding M}"
+                       Placeholder="M"
+                       PlaceholderColor="DarkSlateGray"/>
+            </StackLayout>
+            <Button Text="Calculate" Command="{Binding Calculate}" />
+            <Entry IsReadOnly="True"  IsVisible="{Binding HaveMessage}"
+                   Text="{Binding Message}"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Message"
+                   TextColor="Black"
+                   PlaceholderColor="DarkSlateGray"
+                   />
+            <Entry IsReadOnly="True"
+                   Text="{Binding Result}"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Result"
+                   TextColor="Black"
+                   PlaceholderColor="DarkSlateGray"
+                   />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

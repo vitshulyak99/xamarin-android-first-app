@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Softeq.Test.Views.SecondPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="FilePickButton" Text="Pick file"/>
+            <Entry IsReadOnly="True" 
+                   Text="{Binding FileName}"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Input data file"
+                   TextColor="Black"
+                   PlaceholderColor="DarkGray"
+                   />
+            <Button Text="Calculate" Command="{Binding Calculate}" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Max km: " 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <Entry IsReadOnly="True" 
+                       Text="{Binding Result}"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       Placeholder="0"
+                       PlaceholderColor="Gray"/>
+            </StackLayout>
+            <Entry IsReadOnly="True"
+                   IsVisible="{Binding HaveMessage}"
+                   Text="{Binding Message}"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"
+                   Placeholder="Message"
+                   PlaceholderColor="Gray"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

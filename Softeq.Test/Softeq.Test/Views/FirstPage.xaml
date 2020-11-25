@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Softeq.Test.Views.FirstPage"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" 
+                         Margin="2"
+                         VerticalOptions="Center"
+                         Orientation="Horizontal">
+                <Button x:Name="PickInputFileButton" Text="InputDataFile"/>
+                <Button x:Name="PickOutputFileButton" Text="OutputDataFile"/>
+            </StackLayout>
+            <Entry IsReadOnly="True" 
+                   Text="{Binding InputDataFileName}"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Input data file"
+                   TextColor="Black"
+                   PlaceholderColor="DarkGray"
+                   />
+            <Entry IsReadOnly="True" 
+                   Text="{Binding OutputDataFileName}"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Output data file"
+                     TextColor="Black"
+                   PlaceholderColor="DarkGray"
+                   />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Add member to polynom" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       />
+                <Entry Placeholder="Enter a System.Double"
+                       Text="{Binding TextEditor}"
+                       Keyboard="Numeric"
+                       TextColor="Black"
+                       PlaceholderColor="DarkGray"
+                       />
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions ="Center">
+                <Button Text="Add" Command="{Binding Add}"/>
+                <Button Text="Clear" Command="{Binding Clear}"/>
+            </StackLayout>
+            <Entry IsReadOnly="True" 
+                   Text="{Binding PolynomText}"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"
+                   PlaceholderColor="Black"
+                   Placeholder="Ax^4+Bx^3+Cx^2+Dx+E"/>
+            <Entry IsReadOnly="True"  IsVisible="{Binding HaveMessage}"
+                   Text="{Binding Message}"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Message"
+                   TextColor="Black"
+                   PlaceholderColor="DarkGray"
+                   />
+            <Button Text="Calculate" Command="{Binding Calculate}" 
+                    HorizontalOptions="Center"/>
+            <ScrollView 
+                VerticalOptions="FillAndExpand"
+                VerticalScrollBarVisibility="Always"
+                BackgroundColor="LightGray"
+                        >
+                <ListView ItemsSource="{Binding Output}">
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

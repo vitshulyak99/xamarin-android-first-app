@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Softeq.Test.Views.ThirdPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text=" A: "
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"/>
+                <Entry Placeholder="Input A" 
+                       Text="{Binding A}"
+                       TextColor="Black"
+                       PlaceholderColor="DarkSlateGray"
+                       HorizontalOptions="FillAndExpand"
+                       Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text=" B: "
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"/>
+                <Entry Placeholder="Input B"
+                       Text="{Binding B}"
+                       TextColor="Black"
+                       PlaceholderColor="DarkSlateGray"
+                       HorizontalOptions="FillAndExpand" 
+                       Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text=" N: "
+                       FontSize="Large"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Entry Placeholder="Sum"
+                       Text="{Binding N}"
+                       PlaceholderColor="DarkSlateGray"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="Black" 
+                       Keyboard="Numeric"
+                       />
+            </StackLayout>
+
+            <Button Text="Calculate" Command="{Binding Calculate}"/>
+            <Entry 
+                   IsReadOnly="True"
+                   Placeholder="Result"
+                   Text="{Binding Result}"
+                   PlaceholderColor="DarkSlateGray"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"/> 
+            <Entry IsVisible="{ Binding HaveMessage }"
+                   IsReadOnly="True"
+                   Placeholder="Message"
+                   Text="{Binding Message}"
+                   PlaceholderColor="DarkSlateGray"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
